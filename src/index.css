@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* Vintage Commodore CRT Monitor Effects */
+.crt-screen {
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.crt-screen::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 20;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.crt-screen::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+  z-index: 21;
+}
+
+/* Global Full-App CRT Mode */
+.app-crt-mode {
+  position: relative;
+}
+
+.app-crt-mode::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.28) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  z-index: 999;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.app-crt-mode::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: radial-gradient(circle at center, transparent 70%, rgba(0, 0, 0, 0.5) 100%);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.crt-glow-green {
+  text-shadow: 0 0 6px rgba(52, 211, 153, 0.8), 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.crt-glow-amber {
+  text-shadow: 0 0 6px rgba(251, 191, 36, 0.8), 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.crt-glow-red {
+  text-shadow: 0 0 6px rgba(248, 113, 113, 0.8), 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.985; }
+  50% { opacity: 1; }
+  100% { opacity: 0.985; }
+}
+
+.crt-flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-flicker {
+    animation: none;
+  }
+}
+
+/* Horizontal Decals Strip Styling */
+.decal-strip-horizontal {
+  background: linear-gradient(180deg, #1d1e24 0%, #111215 100%);
+  border: 1px solid #333642;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.4);
+}

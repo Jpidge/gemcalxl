@@ -1,0 +1,6 @@
+{
+  "name": "Commodore 110: Cellular Automata Mechanical Calculator",
+  "description": "An 8-bit first-principles digital calculator and ALU built from Rule 110 cellular automata and Google Sheets formulas with vintage Commodore handheld aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
